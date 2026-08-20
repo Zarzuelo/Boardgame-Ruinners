@@ -86,7 +86,7 @@ rules:
     - number: '05'
       title: Continúa o planta
       description: 'Tras mover, el jugador puede devolver los dados usados a su reserva y seguir arriesgando, o plantarse para consolidar los avances y recuperar los dados.'
-      image: /images/markers.webp
+      image: /images/empty.png
 videoBlock:
   visible: true
   badge: En acción
