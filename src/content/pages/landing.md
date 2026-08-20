@@ -82,7 +82,7 @@ rules:
     - number: '04'
       title: Mueve y combate
       description: 'El avance se marca de forma provisional con marcadores de origen y destino. Si una nave entra en una casilla ocupada por un oponente, se resuelve un combate.'
-      image: /images/tokens.webp
+      image: /images/empty.png
     - number: '05'
       title: Continúa o planta
       description: 'Tras mover, el jugador puede devolver los dados usados a su reserva y seguir arriesgando, o plantarse para consolidar los avances y recuperar los dados.'
