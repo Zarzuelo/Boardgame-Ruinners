@@ -20,7 +20,7 @@ components:
     - title: 1 tablero de juego
       description: 'Un tablero de aproximadamente 28 × 28 cm con rutas numeradas, colores, atajos y túneles de escape.'
       icon: Map
-      image: /images/Copia%20de%20Cant%20stop%20colonize(2).png
+      image: /images/1787270271780.png
     - title: 12 dados
       description: Los dados se lanzan desde la reserva personal para formar parejas válidas de movimiento.
       icon: Dices
