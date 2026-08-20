@@ -28,7 +28,7 @@ components:
     - title: 44 fichas de nave
       description: Cada jugador recibe una facción y sus 11 fichas numeradas de nave.
       icon: Users
-      image: /images/tokens.webp
+      image: /images/empty.png
     - title: 6 marcadores temporales
       description: Tres marcadores de origen y tres de destino para señalar los avances provisionales.
       icon: Target
