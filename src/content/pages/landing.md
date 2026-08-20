@@ -78,7 +78,7 @@ rules:
     - number: '03'
       title: Forma rutas válidas
       description: 'La suma de cada pareja debe coincidir con el número de destino. Además, al menos uno de los dados de la pareja debe compartir el color de la casilla, salvo en los atajos, donde ambos dados deben ser del color de la casilla de destino.'
-      image: /images/board.webp
+      image: /images/empty.png
     - number: '04'
       title: Mueve y combate
       description: 'El avance se marca de forma provisional con marcadores de origen y destino. Si una nave entra en una casilla ocupada por un oponente, se resuelve un combate.'
