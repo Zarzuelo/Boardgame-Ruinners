@@ -32,7 +32,7 @@ components:
     - title: 6 marcadores temporales
       description: Tres marcadores de origen y tres de destino para señalar los avances provisionales.
       icon: Target
-      image: /images/empty.png
+      image: /images/1787270007172.png
 factions:
   badge: Las cuatro facciones
   title: 'Una facción, once naves'
