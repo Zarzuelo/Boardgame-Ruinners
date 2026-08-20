@@ -1,0 +1,84 @@
+fragment PagesParts on Pages {
+  __typename
+  hero {
+    __typename
+    badge
+    title
+    subtitle
+    description
+    ludoButtonText
+    ludoUrl
+    salesButtonText
+    salesUrl
+    videoButtonText
+    videoUrl
+    backgroundImage
+    coverImage
+  }
+  components {
+    __typename
+    badge
+    title
+    description
+    features {
+      __typename
+      title
+      description
+      icon
+      image
+    }
+  }
+  factions {
+    __typename
+    badge
+    title
+    description
+    items {
+      __typename
+      name
+      motto
+      accentColor
+      icon
+      image
+      description
+    }
+  }
+  rules {
+    __typename
+    badge
+    title
+    description
+    steps {
+      __typename
+      number
+      title
+      description
+      image
+    }
+  }
+  videoBlock {
+    __typename
+    visible
+    badge
+    title
+    description
+    youtubeUrl
+  }
+  salesSheet {
+    __typename
+    visible
+    badge
+    title
+    description
+    spanishLinkText
+    spanishUrl
+    englishLinkText
+    englishUrl
+  }
+  footer {
+    __typename
+    gameName
+    tagline
+    copyright
+  }
+}

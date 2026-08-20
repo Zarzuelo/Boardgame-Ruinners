@@ -1,0 +1,97 @@
+---
+import { getLandingData } from '@/lib/content';
+
+const data = await getLandingData();
+const factions = data.factions;
+
+const iconMap: Record<string, string> = {
+  Zap: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
+  Wind: 'M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2',
+  Flame: 'M12 2C12 2 7 7 7 12c0 3 2 5 5 5s5-2 5-5c0-5-5-10-5-10zM12 17c-1.5 0-3-1-3-3 0-2 3-5 3-5s3 3 3 5c0 2-1.5 3-3 3z',
+  Mountain: 'M3 20l6-12 4 8 3-6 5 10H3z',
+  Shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+  Skull: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 14a2 2 0 110-4 2 2 0 010 4zm8 0a2 2 0 110-4 2 2 0 010 4z',
+  Swords: 'M14.5 3.5L21 10l-6.5 6.5L8 10l6.5-6.5zM3 21l6-6m6 0l3-3',
+  Eye: 'M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 15a3 3 0 110-6 3 3 0 010 6z',
+};
+
+function getIconPath(icon: string) {
+  return iconMap[icon] || iconMap.Zap;
+}
+---
+
+<section id="facciones" class="relative overflow-hidden bg-background py-24 lg:py-32">
+  <div class="absolute inset-0 bg-dots opacity-20"></div>
+  <div class="absolute top-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="mb-4 inline-flex items-center gap-2 clip-corner-sm border border-primary/30 bg-primary/5 px-4 py-1.5">
+        <span class="text-xs font-semibold uppercase tracking-widest text-primary">
+          {factions.badge}
+        </span>
+      </div>
+      <h2 class="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        {factions.title}
+      </h2>
+      <p class="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+        {factions.description}
+      </p>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+      {factions.items.map((faction, index) => (
+        <article
+          class="group relative overflow-hidden clip-corner border border-border bg-card/50 p-8 transition-all duration-500 hover:border-primary/40 hover:bg-card lg:p-10"
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <div
+            class="absolute -top-20 -right-20 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-30"
+            style={`background-color: ${faction.accentColor};`}
+          ></div>
+
+          <div
+            class="absolute top-0 left-0 h-1 w-full origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
+            style={`background-color: ${faction.accentColor};`}
+          ></div>
+
+          <div class="relative flex items-start gap-5">
+            <div
+              class="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden clip-corner-sm border transition-all duration-300 group-hover:scale-110"
+              style={`border-color: ${faction.accentColor}40; background-color: ${faction.accentColor}10;`}
+            >
+              {faction.image ? (
+                <img src={faction.image} alt={faction.name} class="h-full w-full object-cover" />
+              ) : (
+                <svg
+                  class="h-7 w-7 transition-colors duration-300"
+                  style={`color: ${faction.accentColor};`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d={getIconPath(faction.icon)} />
+                </svg>
+              )}
+            </div>
+
+            <div class="flex-1">
+              <h3 class="font-display text-2xl font-bold tracking-tight text-foreground">
+                {faction.name}
+              </h3>
+              <p class="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                {faction.description}
+              </p>
+            </div>
+          </div>
+
+          <span class="absolute bottom-4 right-6 font-display text-5xl font-black opacity-5 transition-opacity duration-500 group-hover:opacity-10"
+            style={`color: ${faction.accentColor};`}>
+            0{index + 1}
+          </span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+---
+import { getLandingData } from '@/lib/content';
+
+const data = await getLandingData();
+const rules = data.rules;
+---
+
+<section id="reglas" class="relative overflow-hidden bg-background py-24 lg:py-32">
+  <div class="absolute top-0 left-1/2 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+  <div class="absolute right-0 top-1/4 h-72 w-72 rounded-full bg-primary/5 blur-3xl"></div>
+  <div class="absolute left-0 bottom-1/4 h-72 w-72 rounded-full bg-accent/5 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <div class="mb-4 inline-flex items-center gap-2 clip-corner-sm border border-primary/30 bg-primary/5 px-4 py-1.5">
+        <span class="text-xs font-semibold uppercase tracking-widest text-primary">
+          {rules.badge}
+        </span>
+      </div>
+      <h2 class="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        {rules.title}
+      </h2>
+      <p class="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+        {rules.description}
+      </p>
+    </div>
+
+    <div class="mt-16 space-y-6 lg:space-y-8">
+      {rules.steps.map((step, index) => (
+        <div
+          id={index === 0 ? 'preparacion' : undefined}
+          class="group relative flex flex-col gap-6 clip-corner border border-border bg-card/50 p-8 transition-all duration-500 hover:border-primary/40 hover:bg-card md:flex-row md:items-center lg:p-10"
+        >
+          <div class="flex shrink-0 items-center justify-center md:w-32">
+            <div class="relative flex h-16 w-16 items-center justify-center clip-corner-sm border border-primary/30 bg-primary/10 transition-all duration-300 group-hover:border-primary group-hover:bg-primary/20">
+              <span class="font-display text-2xl font-black text-primary">
+                {step.number}
+              </span>
+              <div class="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 animate-pulse-glow rounded-sm"></div>
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <h3 class="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+              {step.title}
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              {step.description}
+            </p>
+          </div>
+
+          {step.image && (
+            <button
+              type="button"
+              data-lightbox={step.image}
+              data-lightbox-alt={`Paso ${step.number}: ${step.title}`}
+              class="group/img relative shrink-0 overflow-hidden clip-corner-sm border border-border transition-all duration-300 hover:border-primary/40 md:w-56"
+              aria-label={`Ampliar imagen del paso ${step.number}`}
+            >
+              <img
+                src={step.image}
+                alt={`Paso ${step.number}: ${step.title}`}
+                class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                loading="lazy"
+              />
+              <span class="pointer-events-none absolute inset-0 flex items-center justify-center bg-background/0 opacity-0 transition-all duration-300 group-hover/img:bg-background/40 group-hover/img:opacity-100">
+                <span class="flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-foreground shadow-lg">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6M7 10h6" />
+                  </svg>
+                  Ampliar
+                </span>
+              </span>
+            </button>
+          )}
+
+          {index < rules.steps.length - 1 && (
+            <div class="absolute -bottom-3 left-1/2 hidden -translate-x-1/2 lg:block">
+              <svg class="h-6 w-6 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

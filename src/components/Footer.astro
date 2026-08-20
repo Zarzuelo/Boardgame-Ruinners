@@ -1,0 +1,34 @@
+---
+import { getLandingData } from '@/lib/content';
+
+const data = await getLandingData();
+const footer = data.footer;
+---
+
+<footer class="relative overflow-hidden border-t border-border bg-secondary/30">
+  <div class="absolute top-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+  <div class="absolute bottom-0 left-1/2 h-40 w-2/3 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <div class="flex flex-col items-center gap-8 text-center">
+      <a href="#top" class="group flex items-center gap-3">
+        <div class="flex h-12 w-12 items-center justify-center clip-corner-sm border border-primary/40 bg-primary/10 transition-all duration-300 group-hover:border-primary group-hover:bg-primary/20">
+          <span class="font-display text-xl font-bold text-primary">R</span>
+        </div>
+        <span class="font-display text-2xl font-bold tracking-widest text-foreground">
+          {footer.gameName}
+        </span>
+      </a>
+
+      <p class="max-w-md text-sm font-medium tracking-wide text-muted-foreground">
+        {footer.tagline}
+      </p>
+
+      <div class="h-px w-full max-w-xs bg-gradient-to-r from-transparent via-border to-transparent"></div>
+
+      <p class="text-xs tracking-wide text-muted-foreground/70">
+        {footer.copyright}
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,103 @@
+---
+const navLinks = [
+  { label: "Componentes", href: "#componentes" },
+  { label: "Facciones", href: "#facciones" },
+  { label: "Reglas", href: "#reglas" },
+  { label: "Vídeo", href: "#video" },
+  { label: "Hoja de ventas", href: "#hoja-ventas" },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+>
+  <div class="header-bg absolute inset-0 bg-background/80 backdrop-blur-lg border-b border-border opacity-0 transition-opacity duration-500"></div>
+  <nav class="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+    <!-- Logo -->
+    <a href="#top" class="group flex items-center gap-3">
+      <div class="relative flex h-10 w-10 items-center justify-center clip-corner-sm border border-primary/40 bg-primary/10 transition-all duration-300 group-hover:border-primary group-hover:bg-primary/20">
+        <span class="font-display text-lg font-bold text-primary">R</span>
+        <div class="absolute inset-0 animate-pulse-glow rounded-sm"></div>
+      </div>
+      <span class="font-display text-xl font-bold tracking-widest text-foreground">
+        RUINNERS
+      </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden items-center gap-8 md:flex">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="relative text-sm font-medium tracking-wide text-muted-foreground transition-colors duration-300 hover:text-foreground"
+        >
+          {link.label}
+          <span class="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300 hover:w-full"></span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="flex h-10 w-10 items-center justify-center md:hidden"
+      aria-label="Abrir menú"
+    >
+      <svg class="h-6 w-6 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-b border-border bg-background/95 backdrop-blur-lg md:hidden"
+  >
+    <div class="flex flex-col gap-1 px-6 py-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-nav-link rounded-md px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('site-header');
+  const headerBg = header?.querySelector('.header-bg');
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      headerBg?.classList.add('opacity-100');
+      header?.classList.add('shadow-lg', 'shadow-primary/5');
+    } else {
+      headerBg?.classList.remove('opacity-100');
+      header?.classList.remove('shadow-lg', 'shadow-primary/5');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>
