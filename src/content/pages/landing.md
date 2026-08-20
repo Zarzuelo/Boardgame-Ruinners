@@ -74,7 +74,7 @@ rules:
     - number: '02'
       title: Lanza 4 dados
       description: 'En la fase de movimiento, el jugador elige 4 dados de su reserva personal y los lanza. Debe agrupar los resultados en hasta dos parejas.'
-      image: /images/dice.webp
+      image: /images/empty.png
     - number: '03'
       title: Forma rutas válidas
       description: 'La suma de cada pareja debe coincidir con el número de destino. Además, al menos uno de los dados de la pareja debe compartir el color de la casilla, salvo en los atajos, donde ambos dados deben ser del color de la casilla de destino.'
