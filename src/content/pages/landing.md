@@ -24,7 +24,7 @@ components:
     - title: 12 dados
       description: Los dados se lanzan desde la reserva personal para formar parejas válidas de movimiento.
       icon: Dices
-      image: /images/dice.webp
+      image: /images/1787014344819.png
     - title: 44 fichas de nave
       description: Cada jugador recibe una facción y sus 11 fichas numeradas de nave.
       icon: Users
