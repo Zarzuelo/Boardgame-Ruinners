@@ -70,7 +70,7 @@ rules:
     - number: '01'
       title: Preparación
       description: Cada jugador elige una facción y recibe sus 11 fichas numeradas. Se sortea el jugador inicial y se le entregan los 6 marcadores temporales junto a los 12 dados.
-      image: ''
+      image: /images/empty.png
     - number: '02'
       title: Lanza 4 dados
       description: 'En la fase de movimiento, el jugador elige 4 dados de su reserva personal y los lanza. Debe agrupar los resultados en hasta dos parejas.'
