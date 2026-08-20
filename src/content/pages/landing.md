@@ -10,8 +10,8 @@ hero:
   salesUrl: '#componentes'
   videoButtonText: Preparación
   videoUrl: '#preparacion'
-  backgroundImage: '/imageshttps://assets.tina.io/fa29dc47-c4eb-49f3-ad28-e7d83557c863/Copia%20de%20Cant%20stop%20colonize(2).png'
-  coverImage: /images/cover.webp
+  backgroundImage: /images/Copia%20de%20Cant%20stop%20colonize(2).png
+  coverImage: /images/1784926198536(1).png
 components:
   badge: Contenido de la caja
   title: Un tablero. Doce dados. Cuatro facciones.
