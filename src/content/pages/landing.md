@@ -54,7 +54,7 @@ factions:
       motto: Facción de juego
       accentColor: '#343a40'
       icon: Flame
-      image: '/imageshttps://assets.tina.io/fa29dc47-c4eb-49f3-ad28-e7d83557c863/1774181599454.png'
+      image: /images/1774181599454.png
       description: Supervivientes militares de las zonas devastadas. Creen que la única forma de sobrevivir es eliminando a las demás colonias para que no saturen los túneles de escape.
     - name: La Orden Terra
       motto: Facción de juego
