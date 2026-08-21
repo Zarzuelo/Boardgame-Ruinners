@@ -60,7 +60,7 @@ factions:
       motto: Facción de juego
       accentColor: '#e8e5eb'
       icon: Mountain
-      image: '/imageshttps://assets.tina.io/fa29dc47-c4eb-49f3-ad28-e7d83557c863/faction_terra.png'
+      image: /images/faction_terra.png
       description: 'Los restos del antiguo gobierno mundial. Poseen las naves más pesadas y blindadas, diseñadas para resistir cualquier sabotaje mientras avanzan con paso firme.'
 rules:
   badge: Reglamento resumido
