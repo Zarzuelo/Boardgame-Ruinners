@@ -42,7 +42,7 @@ factions:
       motto: Facción de juego
       accentColor: '#2450a5'
       icon: Zap
-      image: '/imageshttps://assets.tina.io/fa29dc47-c4eb-49f3-ad28-e7d83557c863/1774181189334.png'
+      image: /images/1774181189334.png
       description: 'Antiguos ingenieros de la red energética global. Sus experimentos para extraer energía del núcleo causaron la primera gran fractura. Ahora, usan su tecnología para huir antes que nadie.'
     - name: Nómadas del Vacío
       motto: Facción de juego
