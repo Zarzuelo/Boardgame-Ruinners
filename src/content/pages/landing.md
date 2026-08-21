@@ -48,7 +48,7 @@ factions:
       motto: Facción de juego
       accentColor: '#e87521'
       icon: Wind
-      image: '/imageshttps://assets.tina.io/fa29dc47-c4eb-49f3-ad28-e7d83557c863/1774181726927.png'
+      image: /images/1774181726927.png
       description: 'Una coalición de parias y chatarreros que han aprendido a navegar por las grietas gravitacionales del planeta moribundo. No buscan combatir, sino desaparecer en el espacio.'
     - name: Legión Ceniza
       motto: Facción de juego
